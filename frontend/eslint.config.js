@@ -9,8 +9,12 @@ export default [
       nuxt,
     },
     rules: {
-      // Дополнительные правила ESLint
+      'no-unused-vars': 'warn',
+      'no-undef': 'warn',
     },
+  },
+  {
+    ignores: ['.nuxt/'],
   },
   prettier,
 ];
