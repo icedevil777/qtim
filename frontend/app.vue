@@ -3,9 +3,7 @@
     <div class="max-w-[1440px] mx-auto" style="width: 100%">
       <Header />
       <div class="mt-20 sm:px-10">
-        <div class="w-fit">
-          <NuxtPage />
-        </div>
+        <NuxtPage />
       </div>
     </div>
     <Footer class="bg-[#E2BEFF] mt-15" />

@@ -9,7 +9,7 @@
         </NuxtLink>
       </div>
     </div>
-    <div v-else class="flex text-3xl w-[1400px] h-96 justify-content-center">
+    <div v-else-if="loading" class="flex text-3xl w-[1400px] h-96 justify-content-center">
       <span class="m-auto">Loading ...</span>
     </div>
     <div class="flex mt-5 md:pl-3 w-full">
@@ -26,7 +26,7 @@
           class="w-12 h-12 rounded-xl cursor-pointer"
           :class="[
             i === currentPage + 1 ? 'bg-[black] text-white' : 'bg-[#F3F3F3] text-black',
-            i > currentPage - 1 && i < currentPage + 3 ? 'flex' : 'hidden',
+            i > currentPage - 1 && (i < currentPage + 4 && currentPage === 0 || i < currentPage + 3 && currentPage != 0 || currentPage === pagArray ) ? 'flex' : 'hidden',
           ]"
           @click="setpagData(i - 1)"
         >
