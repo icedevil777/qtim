@@ -12,23 +12,28 @@
     <div v-else class="flex text-3xl w-[1400px] h-96 justify-content-center">
       <span class="m-auto">Loading ...</span>
     </div>
-    <div class="flex mt-5 pl-3 w-full">
+    <div class="flex mt-5 md:pl-3 w-full">
       <div class="flex mx-auto space-x-2">
-        <div v-if="currentPage > 0" @click="currentPage--" class="flex w-12 h-12 rounded-xl cursor-pointer pug-border">
+        <div
+          @click="setpagData(currentPage > 0 ? currentPage - 1 : currentPage)"
+          class="flex w-12 h-12 rounded-xl cursor-pointer pug-border"
+        >
           <span class="m-auto text-xl"><</span>
         </div>
         <div
           v-for="i in pagArray"
           :key="i"
-          class="flex w-12 h-12 rounded-xl cursor-pointer"
-          :class="[i === currentPage + 1 ? 'bg-[black] text-white' : 'bg-[#F3F3F3] text-black']"
+          class="w-12 h-12 rounded-xl cursor-pointer"
+          :class="[
+            i === currentPage + 1 ? 'bg-[black] text-white' : 'bg-[#F3F3F3] text-black',
+            i > currentPage - 1 && i < currentPage + 3 ? 'flex' : 'hidden',
+          ]"
           @click="setpagData(i - 1)"
         >
           <span class="m-auto text-lg">{{ i }}</span>
         </div>
         <div
-          v-if="currentPage < pagArray - 1"
-          @click="currentPage++"
+          @click="setpagData(currentPage < pagArray - 1 ? currentPage + 1 : currentPage)"
           class="flex w-12 h-12 rounded-xl cursor-pointer pug-border"
         >
           <span class="m-auto text-xl">></span>
@@ -65,5 +70,9 @@ onMounted(async () => {
 <style scoped>
 .pug-border {
   border: solid black 1px;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 </style>
