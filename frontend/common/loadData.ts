@@ -1,12 +1,21 @@
 import { ref } from 'vue';
 import axios from 'axios';
 
+interface Post {
+  id: string;
+  createdAt: string;
+  title: string;
+  preview: string;
+  image: string;
+  description: string;
+}
+
 export const getPosts = () => {
-  const posts = ref([]);
+  const posts = ref<Post[]>([]);
   const loading = ref(false);
   const error = ref<string | null>(null);
 
-  const fetchPosts = async (id = <string>'') => {
+  const fetchPosts = async (id: string = ''): Promise<void> => {
     loading.value = true;
     error.value = null;
 

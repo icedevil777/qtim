@@ -26,7 +26,12 @@
           class="w-12 h-12 rounded-xl cursor-pointer"
           :class="[
             i === currentPage + 1 ? 'bg-[black] text-white' : 'bg-[#F3F3F3] text-black',
-            i > currentPage - 1 && (i < currentPage + 4 && currentPage === 0 || i < currentPage + 3 && currentPage != 0 || currentPage === pagArray ) ? 'flex' : 'hidden',
+            i > currentPage - 1 &&
+            ((i < currentPage + 4 && currentPage === 0) ||
+              (i < currentPage + 3 && currentPage != 0) ||
+              currentPage === pagArray)
+              ? 'flex'
+              : 'hidden',
           ]"
           @click="setpagData(i - 1)"
         >
@@ -62,7 +67,7 @@ const pagArray = computed(() => {
 });
 
 onMounted(async () => {
-  await fetchPosts();
+  await fetchPosts("");
   setpagData(0);
 });
 </script>
