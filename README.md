@@ -18,7 +18,4 @@ https://6082e3545dbd2c001757abf5.mockapi.io/qtim-test-work/posts/${id}
 ### Макет блога в Figma:
 https://www.figma.com/file/YuLYXnZmLk1U5sKAYjQ0Qy/Test?type=design&node-id=0-1&mode=design&t=qUknJKzxfWOznHn0-0
 
-![alt text](public/figma.png)
-
-
-S
+![alt text](frontend/public/figma.png)
