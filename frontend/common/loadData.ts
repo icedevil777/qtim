@@ -10,6 +10,7 @@ interface Post {
   description: string;
 }
 
+// Не используется в проекте
 export const getPosts = () => {
   const posts = ref<Post[]>([]);
   const loading = ref(false);

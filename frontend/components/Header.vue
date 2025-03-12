@@ -7,9 +7,7 @@
       <button class="md:flex hidden cursor-pointer ml-10">
         <img class="h-[45px] md:h-[52px]" src="../assets/img/language.svg" alt="Vector" />
       </button>
-      <button class="bg-[#101010] text-white rounded-3xl text-md px-3 md:px-0 md:w-[150px] cursor-pointer">
-        Let's work
-      </button>
+      <button class="bg-[#101010] text-white rounded-3xl text-md px-3 md:px-0 md:w-[150px] cursor-pointer">Let's work</button>
     </div>
   </div>
 </template>
